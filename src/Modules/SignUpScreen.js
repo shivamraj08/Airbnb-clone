@@ -34,6 +34,7 @@ export default function SignUpScreen({navigation}) {
           {"We'll call or text you to confirm your number.Standard message and data rates apply."}
         </Text>
         <TouchableOpacity
+        onPress={()=>navigation.navigate('BottomTabNavigator')}
         style={styles.continueButton}>
           <Text style={styles.continueText}>
             {'Continue'}
@@ -41,15 +42,9 @@ export default function SignUpScreen({navigation}) {
         </TouchableOpacity>
       </View>
       <View style={styles.seperatorView}>
-        {/* <Text>
-          {'------------------'}
-        </Text> */}
         <Text style={styles.seperatorText}>
           {'or'}
         </Text>
-        {/* <Text>
-          {'------------------'}
-        </Text> */}
       </View>
       <TouchableOpacity
       style={styles.emailBox}>
