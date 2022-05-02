@@ -5,11 +5,12 @@ import {CountryPicker} from "react-native-country-codes-picker";
 
 export default function SignUpScreen({navigation}) {
   // const [countryCode, setCountryCode] = useState('');
+    
   return (
     <View style={styles.parentContainer}>
       <TouchableOpacity
         style={styles.container}
-        onPress={() => navigation.goBack()}>
+        onPress={() => navigation.navigate('BottomTabNavigator')}>
         <Image
           style={styles.cancelImg}
           source={{

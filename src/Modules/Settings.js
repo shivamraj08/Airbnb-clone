@@ -6,7 +6,7 @@ export default function Settings({navigation}) {
   return (
     <View style={{flex: 1}}>
       <View style={{flexDirection: 'row'}}>
-        <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
+        <TouchableOpacity onPress={() => navigation.goBack('')}>
           <Image
             style={styles.arrowImage}
             source={{ uri: 'https://cdn-icons-png.flaticon.com/128/2223/2223615.png'}}

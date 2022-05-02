@@ -22,7 +22,6 @@ const MyStack = () => {
        <Stack.Screen name='SignUpScreen' component={SignUpScreen}/>
        <Stack.Screen name='ModalScreen'  component={ModalScreen}/>
        <Stack.Screen name='Settings' component={Settings}/>
-       <Stack.Screen name='LoginScreen' component={LoginScreen}/>
        </Stack.Navigator>
     </NavigationContainer>
 

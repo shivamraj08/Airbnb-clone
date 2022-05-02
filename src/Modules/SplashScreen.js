@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SplashScreen({navigation}) {
     setTimeout(()=>{
-        navigation.navigate("BottomTabNavigator")
+        navigation.navigate("SignUpScreen")
     }, 2000)
   return (
     <View>
