@@ -1,11 +1,16 @@
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React,{useState} from 'react';
 import {TextInput} from 'react-native-gesture-handler';
-import {CountryPicker} from "react-native-country-codes-picker";
+import { CountryPicker } from 'react-native-region-country-picker/src/screens';
+import Data from './CountryCode';
+import CountryModal from './CountryModal';
+import Modal from "react-native-modal"
 
-export default function SignUpScreen({navigation}) {
+export default function SignUpScreen({navigation, route}) {
   // const [countryCode, setCountryCode] = useState('');
-    
+   const [modalOpen,setModalOpen] = useState('')
+    const [countryData , setCountryData]=useState({})
+    console.log('gfdsasdfghjkuytresdfy',countryData.name)
   return (
     <View style={styles.parentContainer}>
       <TouchableOpacity
@@ -20,13 +25,27 @@ export default function SignUpScreen({navigation}) {
       </TouchableOpacity>
       <Text style={styles.header}>{'Log in or sign up to Airbnb'}</Text>
       <View style={styles.detailsBox}>
+        <Modal visible={modalOpen}>
+          <CountryModal
+          setModalOpen={setModalOpen}
+          modalOpen={modalOpen}
+          location={item=>setCountryData(item) }
+          />
+        </Modal>
+        <TouchableOpacity
+        activeOpacity={0.3}
+        onPress={()=>setModalOpen(!modalOpen)}
+       
+        >
         <View
           style={styles.countryBox}>
         <Text>
           {'Country/Region'}
+          
         </Text>
-        <TextInput placeholder=""/>
+        <Text>{countryData.name}</Text>
         </View>
+        </TouchableOpacity>
         <TextInput style={styles.phoneText} autoFocus={true} keyboardType={'numeric'} placeholder={'Phone number'} />
       </View>
       <View>
